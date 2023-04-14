@@ -143,6 +143,7 @@ require('lazy').setup({
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
+      'ray-x/go.nvim',
     },
   },
 
@@ -305,6 +306,14 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- [[ Unused Variables highlight style]]
+vim.api.nvim_create_autocmd('VimEnter', {
+  pattern = '*',
+  callback = function()
+    vim.cmd [[hi CocUnusedHighlight guibg=#4D4D4D]]
+  end
+})
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
