@@ -208,6 +208,73 @@ require('lazy').setup({
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
+  --
+  -- better-comments plugin similar to vscode
+  { 
+    'Djancyp/better-comments.nvim',
+    config = function()
+      require('better-comment').Setup({
+        tags = {
+          {
+            name = "TODO",
+            fg = "white",
+            bg = "#0a7aca",
+            bold = true,
+            virtual_text = "",
+          },
+          {
+            name = "FIX",
+            fg = "white",
+            bg = "#f44747",
+            bold = true,
+            virtual_text = "",
+          },
+          {
+            name = "WARNING",
+            fg = "#FFA500",
+            bg = "",
+            bold = false,
+            virtual_text = "",
+          },
+          {
+            name = "!",
+            fg = "#f44747",
+            bg = "",
+            bold = true,
+            virtual_text = "",
+          },
+          {
+            name = "todo",
+            fg = "white",
+            bg = "#0a7aca",
+            bold = true,
+            virtual_text = "",
+          },
+          {
+            name = "warning",
+            fg = "#FFA500",
+            bg = "",
+            bold = false,
+            virtual_text = "",
+          },
+          {
+            name = "*",
+            fg = "#00ff00",
+            bg = "",
+            bold = false,
+            virtual_text = "",
+          },
+          {
+            name = "@",
+            fg = "#0a7aca",
+            bg = "",
+            bold = false,
+            virtual_text = "",
+          },
+        },
+      })
+    end
+  },
 
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
