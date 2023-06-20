@@ -434,6 +434,12 @@ vim.keymap.set('n', '<leader>\\', ':NvimTreeFocus<CR>', {silent = true})
 -- [[ Configure personal keybindings ]]
 vim.keymap.set('i', 'jk', '<esc>') -- map jk to <esc> in insert mode
 
+-- [[ Keymaps for coc suggestion completions ]]
+vim.cmd([[
+  inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+  inoremap <expr> <tab> coc#pum#visible() ? coc#_select_confirm() : "\<TAB>"
+]])
+
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
