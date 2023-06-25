@@ -302,6 +302,11 @@ require('lazy').setup({
     end,
   },
 
+  -- Fish plugin
+  {
+    '/khaveesh/vim-fish-syntax',
+  },
+
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
