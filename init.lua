@@ -307,6 +307,11 @@ require('lazy').setup({
     '/khaveesh/vim-fish-syntax',
   },
 
+  -- GraphQL syntax highlight
+  {
+    'jparise/vim-graphql',
+  },
+
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -336,6 +341,9 @@ vim.wo.number = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
+
+-- Enable UTF-8 encoding
+vim.o.encoding = 'UTF-8'
 
 -- Enable light hightligt
 vim.o.cursorline = true;
