@@ -312,6 +312,13 @@ require('lazy').setup({
     'jparise/vim-graphql',
   },
 
+  {
+    'kkoomen/vim-doge',
+    config = function()
+      vim.cmd([[call doge#install()]])
+    end,
+  }
+
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
