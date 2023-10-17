@@ -139,7 +139,13 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 
+        'j-hui/fidget.nvim', 
+        tag = 'legacy',
+        event = 'LspAttach',
+        opts = {
+        },
+      },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -200,9 +206,8 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
+    main = 'ibl',
     opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
     },
   },
 
@@ -315,7 +320,7 @@ require('lazy').setup({
   {
     'kkoomen/vim-doge',
     config = function()
-      vim.cmd([[call doge#install()]])
+      -- vim.cmd([[call doge#install()]])
     end,
   }
 
@@ -335,7 +340,14 @@ require('lazy').setup({
   --    An additional note is that if you only copied in the `init.lua`, you can just comment this line
   --    to get rid of the warning telling you that there are not plugins in `lua/custom/plugins/`.
 --  { import = 'custom.plugins' },
-}, {})
+}, {
+	defaults = {
+		-- lazy = true,
+	},
+	checker = {
+		enabled = true,
+	},
+})
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
