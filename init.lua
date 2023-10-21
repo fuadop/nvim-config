@@ -322,6 +322,11 @@ require('lazy').setup({
     config = function()
       -- vim.cmd([[call doge#install()]])
     end,
+  },
+
+  -- Github code theme
+  {
+    'projekt0n/github-nvim-theme',
   }
 
 
