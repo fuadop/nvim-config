@@ -222,8 +222,8 @@ require('lazy').setup({
         tags = {
           {
             name = "TODO",
-            fg = "white",
-            bg = "#0a7aca",
+            fg = "#FF8C00",
+            bg = "",
             bold = true,
             virtual_text = "",
           },
@@ -250,8 +250,8 @@ require('lazy').setup({
           },
           {
             name = "todo",
-            fg = "white",
-            bg = "#0a7aca",
+            fg = "#FF8C00",
+            bg = "",
             bold = true,
             virtual_text = "",
           },
