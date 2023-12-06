@@ -327,6 +327,10 @@ require('lazy').setup({
   -- Github code theme
   {
     'projekt0n/github-nvim-theme',
+  },
+
+  {
+    'mg979/vim-visual-multi',
   }
 
 
