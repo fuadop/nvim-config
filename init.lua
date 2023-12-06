@@ -183,9 +183,9 @@ require('lazy').setup({
   {
     'lunarvim/colorschemes',
     priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'darkplus'
-    end,
+    -- config = function()
+    --   vim.cmd.colorscheme 'darkplus'
+    -- end,
   },
 
 
@@ -331,6 +331,19 @@ require('lazy').setup({
 
   {
     'mg979/vim-visual-multi',
+  },
+
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    config = function()
+      -- setup rose-pine
+      require('rose-pine').setup({
+        disable_italics = true,
+      })
+
+      vim.cmd.colorscheme 'rose-pine-main'
+    end,
   }
 
 
