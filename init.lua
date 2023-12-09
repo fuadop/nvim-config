@@ -344,7 +344,16 @@ require('lazy').setup({
 
       vim.cmd.colorscheme 'rose-pine-main'
     end,
-  }
+  },
+
+  {
+    'APZelos/blamer.nvim',
+    config = function()
+      vim.g.blamer_delay = 500
+      vim.g.blamer_enabled = true
+      vim.g.blamer_relative_time = true
+    end,
+  },
 
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
