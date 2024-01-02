@@ -346,15 +346,16 @@ require('lazy').setup({
     end,
   },
 
+  { 'b0o/schemastore.nvim' },
+
   {
     'APZelos/blamer.nvim',
     config = function()
-      vim.g.blamer_delay = 500
+      vim.g.blamer_delay = 1000
       vim.g.blamer_enabled = true
       vim.g.blamer_relative_time = true
     end,
   },
-
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -507,7 +508,7 @@ vim.cmd([[
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'bash', 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'javascript', 'regex', 'help', 'vim' },
+  ensure_installed = { 'bash', 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'javascript', 'regex', 'help', 'vim', 'vimdoc', 'query', 'yaml', 'dockerfile', 'json' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
@@ -636,6 +637,22 @@ local servers = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
+    },
+  },
+
+  jsonls = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+      validate = { enable = true },
+    },
+  },
+  yamlls = {
+    yaml = {
+      schemaStore = {
+        enable = false,
+        url = "",
+      },
+      schemas = require('schemastore').yaml.schemas(),
     },
   },
 }
