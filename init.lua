@@ -501,6 +501,12 @@ vim.keymap.set('n', '<leader>\\', ':NvimTreeFocus<CR>', {silent = true})
 -- [[ Configure personal keybindings ]]
 vim.keymap.set('i', 'jk', '<esc>') -- map jk to <esc> in insert mode
 
+-- split pane movement; map leader to <C-w>
+vim.keymap.set('n', '<leader>l', '<C-w>l')
+vim.keymap.set('n', '<leader>h', '<C-w>h')
+vim.keymap.set('n', '<leader>j', '<C-w>j')
+vim.keymap.set('n', '<leader>k', '<C-w>k')
+
 -- [[ Keymaps for coc suggestion completions ]]
 vim.cmd([[
   inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
