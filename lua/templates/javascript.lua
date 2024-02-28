@@ -11,7 +11,7 @@ local function base_template(relative_path, filename)
 // @ts-check
 
 const ]] .. function_name .. [[ = async () => {
-}
+};
 
 module.exports = ]] .. function_name .. [[;
 
