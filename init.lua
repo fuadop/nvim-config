@@ -338,11 +338,19 @@ require('lazy').setup({
     name = 'rose-pine',
     config = function()
       -- setup rose-pine
-      require('rose-pine').setup({
-        disable_italics = true,
-      })
+      -- require('rose-pine').setup({
+      --   disable_italics = true,
+      -- })
+      --
+      -- vim.cmd.colorscheme 'rose-pine-main'
+    end,
+  },
 
-      vim.cmd.colorscheme 'rose-pine-main'
+  {
+    'mellow-theme/mellow.nvim',
+    config = function()
+      -- setup mellow theme
+      vim.cmd.colorscheme 'mellow'
     end,
   },
 
