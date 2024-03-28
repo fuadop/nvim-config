@@ -365,7 +365,7 @@ require('lazy').setup({
     end,
   },
 
-  { 
+  {
     'otavioschwanck/new-file-template.nvim',
     opts = {
       disable_insert = true,
@@ -374,9 +374,12 @@ require('lazy').setup({
         'ruby',
         'solidity',
       },
-    }, 
+    },
   },
 
+  {
+    'fatih/vim-go',
+  },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
