@@ -534,6 +534,10 @@ vim.keymap.set('n', '<leader>k', '<C-w>k')
 vim.keymap.set('n', '<leader>%', '<C-w>v')
 vim.keymap.set('n', '<leader>"', ':split<CR>', {silent=true})
 
+-- whitespace characters display
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
 -- [[ Keymaps for coc suggestion completions ]]
 vim.cmd([[
   inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
