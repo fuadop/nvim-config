@@ -530,6 +530,10 @@ vim.keymap.set('n', '<leader>h', '<C-w>h')
 vim.keymap.set('n', '<leader>j', '<C-w>j')
 vim.keymap.set('n', '<leader>k', '<C-w>k')
 
+-- split pane using tmux style
+vim.keymap.set('n', '<leader>%', '<C-w>v')
+vim.keymap.set('n', '<leader>"', ':split<CR>', {silent=true})
+
 -- [[ Keymaps for coc suggestion completions ]]
 vim.cmd([[
   inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
