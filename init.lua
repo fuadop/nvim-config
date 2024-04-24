@@ -408,7 +408,7 @@ require('lazy').setup({
 -- See `:help vim.o`
 
 -- Set highlight on search
--- vim.o.hlsearch = true
+vim.o.hlsearch = false
 -- vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Make line numbers default
