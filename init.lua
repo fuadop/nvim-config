@@ -180,15 +180,6 @@ require('lazy').setup({
     },
   },
 
-  {
-    'lunarvim/colorschemes',
-    priority = 1000,
-    -- config = function()
-    --   vim.cmd.colorscheme 'darkplus'
-    -- end,
-  },
-
-
   { -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
@@ -324,33 +315,40 @@ require('lazy').setup({
     end,
   },
 
-  -- Github code theme
-  {
-    'projekt0n/github-nvim-theme',
-  },
+  -- ColorScheme Journey
+  -- {
+  --   'rose-pine/neovim',
+  --   name = 'rose-pine',
+  --   config = function()
+  --     -- setup rose-pine
+  --     -- require('rose-pine').setup({
+  --     --   disable_italics = true,
+  --     -- })
+  --     --
+  --     -- vim.cmd.colorscheme 'rose-pine-main'
+  --   end,
+  -- },
+  --
+  -- {
+  --   'mellow-theme/mellow.nvim',
+  --   config = function()
+  --     -- setup mellow theme
+  --     -- vim.cmd.colorscheme 'mellow'
+  --   end,
+  -- },
+  -- {
+  --   'lunarvim/colorschemes',
+  --   priority = 1000,
+  --   -- config = function()
+  --   --   vim.cmd.colorscheme 'darkplus'
+  --   -- end,
+  -- },
 
   {
-    'mg979/vim-visual-multi',
-  },
-
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine',
+    'ellisonleao/gruvbox.nvim',
+    priority = 1000 ,
     config = function()
-      -- setup rose-pine
-      -- require('rose-pine').setup({
-      --   disable_italics = true,
-      -- })
-      --
-      -- vim.cmd.colorscheme 'rose-pine-main'
-    end,
-  },
-
-  {
-    'mellow-theme/mellow.nvim',
-    config = function()
-      -- setup mellow theme
-      vim.cmd.colorscheme 'mellow'
+      vim.cmd.colorscheme 'gruvbox'
     end,
   },
 
