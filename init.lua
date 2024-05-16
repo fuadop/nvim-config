@@ -85,25 +85,9 @@ require('lazy').setup({
           indicator = {
             style = 'underline',
           },
-          offsets = {
-            {
-              filetype = 'NvimTree',
-              text = '',
-              highlight = 'Directory',
-              separator = true,
-            }
-          },
         },
       }
     end,
-  },
-
-  -- Directory tree
-  {
-    'nvim-tree/nvim-tree.lua',
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-    },
   },
 
   -- Greeter page
@@ -315,35 +299,6 @@ require('lazy').setup({
     end,
   },
 
-  -- ColorScheme Journey
-  -- {
-  --   'rose-pine/neovim',
-  --   name = 'rose-pine',
-  --   config = function()
-  --     -- setup rose-pine
-  --     -- require('rose-pine').setup({
-  --     --   disable_italics = true,
-  --     -- })
-  --     --
-  --     -- vim.cmd.colorscheme 'rose-pine-main'
-  --   end,
-  -- },
-  --
-  -- {
-  --   'mellow-theme/mellow.nvim',
-  --   config = function()
-  --     -- setup mellow theme
-  --     -- vim.cmd.colorscheme 'mellow'
-  --   end,
-  -- },
-  -- {
-  --   'lunarvim/colorschemes',
-  --   priority = 1000,
-  --   -- config = function()
-  --   --   vim.cmd.colorscheme 'darkplus'
-  --   -- end,
-  -- },
-
   {
     'ellisonleao/gruvbox.nvim',
     priority = 1000 ,
@@ -519,12 +474,14 @@ vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { de
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
--- [[ Configure nvim-tree keybindings ]]
-vim.keymap.set('n', '\\', ':NvimTreeToggle<CR>', {silent = true})
-vim.keymap.set('n', '<leader>\\', ':NvimTreeFocus<CR>', {silent = true})
-
 -- [[ Configure personal keybindings ]]
+
+-- map jk to NORMAL mode in INSERT mode
 vim.keymap.set('i', 'jk', '<esc>') -- map jk to <esc> in insert mode
+
+-- map jk & <esc> to NORMAL mode in TERMINAL mode
+vim.keymap.set('t', 'jk', '<C-\\><C-n>')
+vim.keymap.set('t', '<esc>', '<C-\\><C-n>')
 
 -- split pane movement; map leader to <C-w>
 vim.keymap.set('n', '<leader>l', '<C-w>l')
@@ -772,23 +729,6 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
-
--- setup nvim-tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-require('nvim-tree').setup({
-  git = {
-    enable = true,
-  },
-  renderer = {
-    highlight_git = true,
-    icons = {
-      show = {
-        git = true,
-      },
-    },
-  },
-})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
