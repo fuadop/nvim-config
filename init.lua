@@ -90,17 +90,6 @@ require('lazy').setup({
     end,
   },
 
-  -- Greeter page
-  {
-    'goolord/alpha-nvim',
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-    },
-    config = function()
-      require('alpha').setup(require('alpha.themes.dashboard').config)
-    end,
-  },
-
   -- Comment plugin
   {
     'numToStr/Comment.nvim',
@@ -308,15 +297,6 @@ require('lazy').setup({
   },
 
   { 'b0o/schemastore.nvim' },
-
-  {
-    'APZelos/blamer.nvim',
-    config = function()
-      vim.g.blamer_delay = 1000
-      vim.g.blamer_enabled = true
-      vim.g.blamer_relative_time = true
-    end,
-  },
 
   {
     'otavioschwanck/new-file-template.nvim',
