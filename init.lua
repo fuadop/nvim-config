@@ -289,13 +289,19 @@ require('lazy').setup({
   },
 
   {
-    'RRethy/base16-nvim',
+    'Mofiqul/vscode.nvim',
     config = function()
-      vim.cmd.colorscheme 'base16-black-metal-nile'
+      require('vscode').setup {
+        style = 'dark'
+      }
+
+      vim.cmd.colorscheme 'vscode'
     end,
   },
 
   { 'b0o/schemastore.nvim' },
+
+  { 'https://gitlab.com/HiPhish/rainbow-delimiters.nvim' },
 
   {
     'otavioschwanck/new-file-template.nvim',
