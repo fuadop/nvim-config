@@ -82,9 +82,13 @@ require('lazy').setup({
     config = function()
       require('bufferline').setup{
         options = {
+          numbers = function(opts)
+            return string.format('%s', opts.raise(opts.id))
+          end,
           indicator = {
             style = 'underline',
           },
+          diagnostics = 'nvim_lsp',
         },
       }
     end,
