@@ -73,7 +73,7 @@ for _, n in ipairs { 1, 2, 3, 4, 5, 6, 7, 8, 9 } do
 	)
 end
 
--- say no to conentions :/
+-- say no to conventions :/
 -- I whould have loved the commands lowercased
 
 return M
