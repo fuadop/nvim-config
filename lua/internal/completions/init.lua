@@ -59,7 +59,17 @@ cmp.setup {
 	},
 
 	formatting = {
-		format = lspkind.cmp_format {},
+		format = lspkind.cmp_format {
+			mode = 'symbol_text',
+			menu = {
+				path = '[Path]',
+				buffer = '[Buffer]',
+				luasnip = '[LuaSnip]',
+				nvim_lsp = '[LSP]',
+				nvim_lua = '[Lua]',
+				latex_symbols = '[Latex]',
+			},
+		},
 	}
 }
 
