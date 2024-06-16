@@ -9,6 +9,10 @@ vim.o.background = 'dark'
 vim.o.termguicolors = true
 vim.o.relativenumber = true
 
+vim.o.tabstop = 2
+vim.o.expandtab = false
+vim.o.shiftwidth = 2
+
 vim.opt.shortmess:append('c')
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
