@@ -20,9 +20,13 @@ K.n = {
 		'[W]orkspace [L]ist Folders',
 	},
 
-	{'gd', vim.lsp.buf.definition, nil, '[G]oto [D]efinition'},
 	{'gI', vim.lsp.buf.implementation, nil, '[G]oto [I]mplementation'},
-	{'gD', vim.lsp.buf.definition, nil, '[G]oto [D]eclaration'},
+	{'gD', vim.lsp.buf.declaration, nil, '[G]oto [D]eclaration'},
+
+	-- todo: put in a popup window [similar to harpoon]
+	{'gR', vim.lsp.buf.references, nil, '[G]oto [R]eferences'},
+	-- todo: put in a popup window [similar to harpoon] if more than one
+	{'gd', vim.lsp.buf.definition, nil, '[G]oto [D]efinition'},
 
 	{'K', vim.lsp.buf.hover, nil, 'Hover Documentation'},
 	{'<C-k>', vim.lsp.buf.signature_help, nil, 'Signature Documentation'},

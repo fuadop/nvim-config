@@ -15,10 +15,6 @@ K.n = {
 	-- diagnostic float
 	{'<leader>e', vim.diagnostic.open_float},
 
-	-- indentbreak scenarios
-	{'k', "v:count == 0 ? 'gk' : 'k'", {expr=true, silent=true}},
-	{'j', "v:count == 0 ? 'gj' : 'j'", {expr=true, silent=true}},
-
 	{'<Space>', '<Nop>', {silent=true}},
 	{'<Esc>', '<cmd>nohlsearch<CR>'}
 }

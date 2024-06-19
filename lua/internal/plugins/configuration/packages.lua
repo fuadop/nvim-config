@@ -83,6 +83,15 @@ return {
 		config = true,
 	},
 
+	-- Not what I expected sadly, vim snappiness in vim gone when using
+	-- The git & diagnostics part of the fancy status line.
+	-- {
+	-- 	dir = '~/.config/nvim/github/simpleline.nvim',
+	-- 	opts = {
+	-- 		components = {},
+	-- 	},
+	-- },
+
 	-- Minimalist Bracket pair closing
 	{
 		'echasnovski/mini.pairs',
