@@ -28,7 +28,26 @@ cmp.setup {
 		['<C-Space>'] = cmp.mapping.complete(),
 
 		-- Enter to accept
-		['<CR>'] = cmp.mapping.confirm { select = true },
+		-- Ignore func. arguments completions
+		['<CR>'] = cmp.mapping(
+			function(fallback)
+				if cmp.visible() then
+					local entry = cmp.get_selected_entry()
+					if entry.source then
+						if entry.source.name ~= 'nvim_lsp_signature_help' then
+							cmp.confirm { select = true }
+						else
+							cmp.abort()
+							fallback()
+						end
+					else
+						cmp.confirm { select = true }
+					end
+				else
+					fallback()
+				end
+			end
+		),
 
 		-- Tap/Shift-Tab for selection[up/down]
 		['<Tab>'] = cmp.mapping(
@@ -70,7 +89,11 @@ cmp.setup {
 				latex_symbols = '[Latex]',
 			},
 		},
-	}
+	},
+
+	experimental = {
+		ghost_text = true,
+	},
 }
 
 require('luasnip.loaders.from_vscode').lazy_load() -- rafamadriz/friendly-snippets
