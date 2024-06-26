@@ -33,15 +33,19 @@ cmp.setup {
 			function(fallback)
 				if cmp.visible() then
 					local entry = cmp.get_selected_entry()
-					if entry.source then
-						if entry.source.name ~= 'nvim_lsp_signature_help' then
-							cmp.confirm { select = true }
+					if entry ~= nil then
+						if entry.source then
+							if entry.source.name ~= 'nvim_lsp_signature_help' then
+								cmp.confirm { select = true }
+							else
+								cmp.abort()
+								fallback()
+							end
 						else
-							cmp.abort()
-							fallback()
+							cmp.confirm { select = true }
 						end
 					else
-						cmp.confirm { select = true }
+						fallback()
 					end
 				else
 					fallback()
