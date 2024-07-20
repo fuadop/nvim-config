@@ -2,6 +2,10 @@ local K = {}
 
 -- NORMAL
 K.n = {
+	-- screen lines
+	{'j', 'gj'},
+	{'k', 'gk'},
+
 	-- pane movements
 	{'<leader>h', '<C-w>h'},
 	{'<leader>j', '<C-w>j'},
