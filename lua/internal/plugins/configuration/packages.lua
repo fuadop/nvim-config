@@ -83,15 +83,6 @@ return {
 		config = true,
 	},
 
-	-- Not what I expected sadly, vim snappiness in vim gone when using
-	-- The git & diagnostics part of the fancy status line.
-	-- {
-	-- 	dir = '~/.config/nvim/github/simpleline.nvim',
-	-- 	opts = {
-	-- 		components = {},
-	-- 	},
-	-- },
-
 	-- Minimalist Bracket pair closing
 	{
 		'echasnovski/mini.pairs',
@@ -106,22 +97,4 @@ return {
 		config = true,
 	},
 
-	-- theme theme theme, my biggest problem
-	{
-		'ellisonleao/gruvbox.nvim',
-		priority = 1000,
-		opts = {
-			italic = {
-				folds = true,
-				strings = false,
-				comments = false,
-				emphasis = true,
-				operators = false,
-			},
-		},
-		config = function(_, opts)
-			require('gruvbox').setup(opts)
-			vim.cmd('colorscheme gruvbox')
-		end,
-	},
 }
