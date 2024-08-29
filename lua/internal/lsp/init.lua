@@ -4,6 +4,7 @@ require('mason-lspconfig').setup {
 	ensure_installed = {
 		'taplo', -- TOML
 		'gopls', -- GO
+		'clangd', -- C
 		'lua_ls', -- LUA
 		'eslint', -- ESLINT (JS)
 		'jsonls', -- JSON
