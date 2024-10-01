@@ -2,6 +2,7 @@ require('mason').setup()
 
 require('mason-lspconfig').setup {
 	ensure_installed = {
+		'ts_ls', -- JS/TS
 		'taplo', -- TOML
 		'gopls', -- GO
 		'clangd', -- C
@@ -10,7 +11,6 @@ require('mason-lspconfig').setup {
 		'jsonls', -- JSON
 		'yamlls', -- YAML
 		'pyright', -- PYTHON
-		'tsserver', -- JS/TS
 		'rust_analyzer', -- RUST
 
 		-- not so often
