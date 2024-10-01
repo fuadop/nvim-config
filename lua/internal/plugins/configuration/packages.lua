@@ -3,6 +3,7 @@ return {
 	{
 		-- The lollypop needed to integrate built-in lsp
 		'neovim/nvim-lspconfig',
+		event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
 		dependencies = {
 			-- LSP servers manager
 			'williamboman/mason.nvim',
@@ -18,12 +19,15 @@ return {
 			-- JSON/YAML popular schemas
 			{ 'b0o/SchemaStore.nvim', ft = { 'json', 'yaml' } },
 		},
+		config = function ()
+			require('internal.lsp')
+		end,
 	},
 
 	-- text completions [using LSP suggestion & Luasnip for custom snippets]
 	{
 		'hrsh7th/nvim-cmp',
-		event = { 'InsertEnter' },
+		event = 'InsertEnter',
 		dependencies = {
 			-- Ricing the completion menu
 			'onsails/lspkind.nvim',
@@ -43,6 +47,9 @@ return {
 			-- Some beautiful pre-made luasnip snippets
 			'rafamadriz/friendly-snippets',
 		},
+		config = function()
+			require('internal.completions')
+		end,
 	},
 
 	-- Parser magic
@@ -53,21 +60,31 @@ return {
 			'nvim-treesitter/nvim-treesitter-textobjects',
 		},
 		build = ':TSUpdate',
+		cmd = { 'TSUpdateSync', 'TSUpdate', 'TSInstall' },
+		event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+		config = function()
+			require('internal.treesitter')
+		end,
 	},
 
 	-- Harpoon - buffer management
 	{
 		'ThePrimeagen/harpoon',
+		event = 'VeryLazy',
 		branch = 'harpoon2', -- latest and greatest
 		dependencies = {
 			-- utility package for sweet lua functions
 			'nvim-lua/plenary.nvim',
 		},
+		config = function()
+			require('internal.harpoon')
+		end,
 	},
 
 	-- Minimalist Bufferline - only display list of buffers in tabline
 	{
 		'echasnovski/mini.tabline',
+		event = 'VeryLazy',
 		version = '*',
 		dependencies = {
 			-- we need harpoon for bespoke format extension
@@ -86,6 +103,7 @@ return {
 	-- Minimalist Bracket pair closing
 	{
 		'echasnovski/mini.pairs',
+		event = 'VeryLazy',
 		version = '*',
 		config = true,
 	},
@@ -94,6 +112,7 @@ return {
 	{
 		'lukas-reineke/indent-blankline.nvim',
 		main = 'ibl',
+		event = { 'BufReadPost', 'BufWritePost', 'BufNewFile', 'VeryLazy' },
 		config = true,
 	},
 
