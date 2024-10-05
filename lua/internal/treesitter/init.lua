@@ -8,6 +8,7 @@ require('nvim-treesitter.configs').setup {
 		_utils.mandatory_parsers,
 		{
 			'go',
+			'cpp',
 			'asm',
 			'tsx',
 			'rust',
