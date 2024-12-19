@@ -1,6 +1,6 @@
 require('internal.variables') -- must come before all keymappings & plugins
 require('internal.options')
-require('internal.colorscheme')
+-- require('internal.colorscheme') -- only when using retrobox
 require('internal.mappings')
 require('internal.commands')
 require('internal.plugins') -- must come before LSP & other dependants
