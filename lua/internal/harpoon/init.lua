@@ -20,7 +20,7 @@ for mode, keymaps in pairs(_mappings) do
 
 		-- has description?
 		if k[4] then
-			_opts.desc = 'LSP: ' .. k[4]
+			_opts.desc = k[4]
 		end
 
 		vim.keymap.set(

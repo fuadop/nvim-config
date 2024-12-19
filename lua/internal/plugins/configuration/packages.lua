@@ -73,8 +73,7 @@ return {
 		event = 'VeryLazy',
 		branch = 'harpoon2', -- latest and greatest
 		dependencies = {
-			-- utility package for sweet lua functions
-			'nvim-lua/plenary.nvim',
+			{ 'nvim-lua/plenary.nvim', lazy = true },
 		},
 		config = function()
 			require('internal.harpoon')
@@ -114,6 +113,35 @@ return {
 		main = 'ibl',
 		event = { 'BufReadPost', 'BufWritePost', 'BufNewFile', 'VeryLazy' },
 		config = true,
+	},
+
+	{
+		'nvim-telescope/telescope.nvim',
+		event = 'VeryLazy',
+		branch = '0.1.x',
+		dependencies = {
+			{ 'nvim-lua/plenary.nvim', lazy = true },
+			{ 'nvim-telescope/telescope-fzf-native.nvim', build='make' },
+		},
+		opts = {
+			pickers = {
+				buffers = {
+					theme = 'dropdown',
+				},
+				find_files = {
+					theme = 'dropdown',
+				},
+				spell_suggest = {
+					theme = 'cursor',
+				},
+				diagnostics = {
+					theme = 'dropdown',
+				},
+			},
+		},
+		config = function(_, opts)
+			require('internal.telescope').setup(opts)
+		end,
 	},
 
 }
