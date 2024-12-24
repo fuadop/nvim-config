@@ -18,3 +18,6 @@ vim.o.shiftwidth = 2
 vim.opt.shortmess:append('c')
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
+vim.o.list = true
+vim.o.listchars = 'tab:\\u16c2\x20,eol:\\uebea,trail:\\ued70'
+

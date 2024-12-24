@@ -107,14 +107,6 @@ return {
 		config = true,
 	},
 
-	-- Can I see my indents please?
-	{
-		'lukas-reineke/indent-blankline.nvim',
-		main = 'ibl',
-		event = { 'BufReadPost', 'BufWritePost', 'BufNewFile', 'VeryLazy' },
-		config = true,
-	},
-
 	{
 		'nvim-telescope/telescope.nvim',
 		event = 'VeryLazy',
