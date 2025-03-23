@@ -13,6 +13,7 @@ require('nvim-treesitter.configs').setup {
 			'tsx',
 			'rust',
 			'python',
+			'haskell',
 			'javascript',
 			'typescript',
 		}

@@ -2,6 +2,7 @@ require('mason').setup()
 
 require('mason-lspconfig').setup {
 	ensure_installed = {
+		'hls', -- Haskell
 		'ts_ls', -- JS/TS
 		'taplo', -- TOML
 		'gopls', -- GO

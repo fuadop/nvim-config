@@ -19,5 +19,5 @@ vim.opt.shortmess:append('c')
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 vim.o.list = true
-vim.o.listchars = 'tab:\\u2502\x20,eol:\\uebea,trail:\\ued70'
+vim.o.listchars = 'tab:\\u2502\x20,eol:\\uebea,trail:\\ued70,space:\\u00b7'
 
