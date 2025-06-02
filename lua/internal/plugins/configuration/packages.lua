@@ -130,10 +130,39 @@ return {
 					theme = 'dropdown',
 				},
 			},
+			defaults = {
+				file_ignore_patterns = {
+					'.venv',
+					'node_modules',
+				},
+			},
 		},
 		config = function(_, opts)
 			require('internal.telescope').setup(opts)
 		end,
+	},
+
+	{
+		'ellisonleao/gruvbox.nvim',
+		opts = {
+			bold = false,
+			italic = {
+				strings = false
+			},
+			contrast = 'hard',
+			overrides = {
+				Todo = {
+					bg='',
+					fg='#fabd2f',
+					bold = false,
+					italic = true,
+				},
+			},
+		},
+		config = function (_, opts)
+			require('gruvbox').setup(opts)
+			vim.cmd('colorscheme gruvbox')
+		end
 	},
 
 }

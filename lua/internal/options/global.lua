@@ -1,6 +1,6 @@
 vim.o.mouse = 'a'
 vim.o.encoding = 'UTF-8'
-vim.o.undofile = true
+vim.o.undofile = false
 vim.o.hlsearch = false
 vim.o.smartcase = true
 vim.o.laststatus = 3 -- global status line

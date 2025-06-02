@@ -1,6 +1,5 @@
 require('internal.variables') -- must come before all keymappings & plugins
 require('internal.options')
-require('internal.colorscheme')
 require('internal.mappings')
 require('internal.commands')
 require('internal.plugins') -- must come before LSP & other dependants
